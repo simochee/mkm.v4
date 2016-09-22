@@ -72,7 +72,7 @@ app.controller('openCalCtrl', ['$scope', '$timeout', 'utils', ($scope, $timeout,
 
 
 app.controller('menuCtrl', ['$scope', 'getJSON', function($scope, getJSON) {
-  $scope.headerBg = '../assets/img/header/menu.jpg';
+  $scope.headerBg = './assets/img/header/menu.jpg';
   $scope.pageName = { ja: 'お品書き', en: 'Menu' };
   $scope.menuList = getJSON.get('./public/menu-list.json');
   console.log($scope.menuList);
