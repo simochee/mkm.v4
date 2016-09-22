@@ -2,7 +2,7 @@
 var app = angular.module('myapp', ['ngSanitize', 'ngResource']);
 // Get Device Infomations
 app.service('info', function () {
-    this._ua = function (u) {
+    this._ua = (function (u) {
         return {
             Tablet: (u.indexOf("windows") != -1 && u.indexOf("touch") != -1 && u.indexOf("tablet pc") == -1)
                 || u.indexOf("ipad") != -1
@@ -18,9 +18,8 @@ app.service('info', function () {
                 || (u.indexOf("firefox") != -1 && u.indexOf("mobile") != -1)
                 || u.indexOf("blackberry") != -1
         };
-    };
+    })(window.navigator.userAgent.toLowerCase());
     this.ua = function () {
-        return 'sp';
         if (this._ua.Tablet || this._ua.Mobile) {
             return 'sp';
         }
