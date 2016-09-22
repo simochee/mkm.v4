@@ -6,16 +6,16 @@
 	<ng-include src="viewsNavbar"></ng-include>
 
 	<main class="main-area">
-		
+
 		<div class="container">
-			
+
 			<%- include('./views/_header', {
 				bg: 'headerBg',
 				pageName: 'pageName'
 			}) %>
 
 			<div class="main-content left">
-				
+
 				<article class="news-article" ng-repeat="item in articles">
 					<header class="header">
 						<h3>{{item.title}}</h3>
@@ -30,8 +30,8 @@
 			</div>
 
 			<div class="sidebar right">
-				
-			
+
+
 
 			</div>
 

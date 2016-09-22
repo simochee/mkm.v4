@@ -44,3 +44,36 @@ app.controller('indexCtrl', ['$scope', 'info', 'menuList', ($scope, info, menuLi
   $scope.viewsIndexHeader = '/common/index-header.html';
   $scope.menuList = menuList.get();
 }]);
+
+app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) => {
+  const imgPath: String = './assets/img/index-pic';
+  $scope.slides = [
+    { img: `${imgPath}/idx-pic1.jpg`, active: true },
+    { img: `${imgPath}/idx-pic2.jpg`, active: false },
+    { img: `${imgPath}/idx-pic3.jpg`, active: false }
+  ];
+
+  let activeIdx = 0;
+  $interval(() => {
+    $scope.slides[activeIdx].active = false;
+    activeIdx ++;
+    if($scope.slides[activeIdx] !== undefined) {
+      $scope.slides[activeIdx].active = true;
+    } else {
+      $scope.slides[0].active = true;
+      activeIdx = 0;
+    }
+  }, 5000);
+}]);
+
+app.controller('openCalCtrl', ['$scope', '$timeout', 'utils', ($scope, $timeout, utils) => {
+
+}]);
+
+
+app.controller('menuCtrl', ['$scope', 'menuList', function($scope, menuList) {
+  $scope.headerBg = '../assets/img/header/menu.jpg';
+  $scope.pageName = { ja: 'お品書き', en: 'Menu' };
+  $scope.menuList = menuList.get();
+  console.log($scope.menuList);
+}]);
