@@ -87,8 +87,8 @@ app.controller('navbarCtrl', ['$scope', function ($scope) {
 app.controller('footerCtrl', ['$scope', function ($scope) {
     }]);
 app.controller('indexCtrl', ['$scope', 'info', 'getJSON', function ($scope, info, getJSON) {
-        $scope.viewsIndexHeader = '/common/index-header.html';
-        $scope.menuList = getJSON.get('/public/menu-list.json');
+        $scope.viewsIndexHeader = './common/index-header.html';
+        $scope.menuList = getJSON.get('./public/menu-list.json');
     }]);
 app.controller('indexHeaderCtrl', ['$scope', '$interval', function ($scope, $interval) {
         var imgPath = './assets/img/index-pic';

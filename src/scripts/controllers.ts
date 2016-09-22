@@ -41,8 +41,8 @@ app.controller('footerCtrl', ['$scope', ($scope) => {
 }]);
 
 app.controller('indexCtrl', ['$scope', 'info', 'getJSON', ($scope, info, getJSON) => {
-  $scope.viewsIndexHeader = '/common/index-header.html';
-  $scope.menuList = getJSON.get('/public/menu-list.json');
+  $scope.viewsIndexHeader = './common/index-header.html';
+  $scope.menuList = getJSON.get('./public/menu-list.json');
 }]);
 
 app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) => {
