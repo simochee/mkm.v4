@@ -4,6 +4,7 @@ import minifyCSS from 'gulp-minify-css';
 import typescript from 'gulp-typescript';
 import ejs from 'gulp-ejs';
 import connect from 'gulp-connect';
+import concat from 'gulp-concat';
 import fs from 'fs';
 
 gulp.task('connect', () => {
@@ -24,15 +25,28 @@ gulp.task('ejs', () => {
 });
 
 gulp.task('ts', () => {
-  gulp.src('./src/scripts/**/*.ts')
-    .pipe(typescript({
-      out: 'main.js'
-    }))
-    .pipe(gulp.dest('./docs/assets/scripts'))
+  gulp.src([
+    './src/scripts/app.ts',
+    './src/scripts/controllers.ts'
+  ])
+  .pipe(typescript({
+    out: 'main.js'
+  }))
+  .pipe(gulp.dest('./docs/assets/scripts'))
+});
+
+gulp.task('libs', () => {
+  gulp.src([
+    './node_modules/angular/angular.js',
+    './node_modules/angular-sanitize/angular-sanitize.js',
+    './node_modules/angular-resource/angular-resource.js'
+  ])
+  .pipe(concat('libs.js'))
+  .pipe(gulp.dest('./docs/assets/scripts'));
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./src/views/**/!(_)*.ejs', ['ejs']);
+  gulp.watch('./src/ejs/**/*.ejs', ['ejs']);
   gulp.watch('./src/scripts/**/*.ts', ['ts']);
 });
 

@@ -1,0 +1,56 @@
+.menu-tree {
+	width: 170px;
+	margin: 0 35px;
+	font-family: Dejima;
+	&.track {
+		position: fixed;
+	}
+	&.trackend {
+		position: absolute;
+	}
+	h4 {
+		margin-top: 20px;
+		span {
+			overflow: hidden;
+			display: block;
+			width: 35px;
+			height: 35px;
+			border-radius: 100%;
+			background: #fff;
+			line-height: 35px;
+			font-size: 40px;
+			color: #000;
+		}
+	}
+	ul {
+		li {
+			margin-left: 35px;
+			a {
+				position: relative;
+				display: block;
+				height: 25px;
+				line-height: 25px;
+				text-decoration: none;
+				color: #fff;
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: -10px;
+					display: block;
+					width: 6px;
+					height: 6px;
+					margin: -3px;
+					border-radius: 100%;
+					background: #fff;
+				}
+				&:hover {
+					color: $orange;
+					&::before {
+						background: $orange;
+					}
+				}
+			}
+		}
+	}
+}

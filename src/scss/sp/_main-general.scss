@@ -1,0 +1,38 @@
+.main-area {
+	&.mg-navbar {
+		padding-top: 70px;
+	}
+	h3 {
+		margin: 8px 5px;
+		line-height: 25px;
+		font-size: 18px;
+		.en {
+			display: block;
+			margin-left: 5px;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}
+	.content-header {
+		height: 200px;
+		.header-outline {
+			height: 140px;
+			margin-top: 60px;
+			h2 {
+				top: 15px;
+				left: 10px;
+				bottom: 15px;
+				right: 10px;
+			}
+			.ja {
+				margin-top: -25px;
+				font-size: 30px;
+				line-height: 40px;
+			}
+			.en {
+				font-size: 14px;
+				line-height: 25px;
+			}
+		}
+	}
+}

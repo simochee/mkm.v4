@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myapp" resize ng-controller="appCtrl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>おしらせ | 村村村</title>
+	<link rel="stylesheet" href="css/ionicons.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-controller="NewsCtrl" ng-class="'useragent-' + ua">
+
+	<ng-include src="viewsNavbar"></ng-include>
+
+	<main class="main-area">
+		
+		<div class="container">
+			
+			<div class="content-header" ng-style="{'background-image': 'url(' + headerBg + ')'}">
+	<div class="header-outline">
+		<h2>
+			<span class="ja" ng-cloak>{{pageName.ja}}</span>
+			<span class="en" ng-cloak>{{pageName.en}}</span>
+		</h2>
+	</div>
+</div>
+
+
+			<div class="main-content left">
+				
+				<article class="news-article" ng-repeat="item in articles">
+					<header class="header">
+						<h3>{{item.title}}</h3>
+						<div class="date">{{dateFormat(item.date)}}</div>
+					</header>
+					<main class="body" ng-bind-html="item.body"></main>
+					<footer class="footer">
+						<span class="posted">Posted at <span class="date">{{dateFormat(item.date)}}</span><span class="time">{{timeFormat(item.time)}}</span><span class="category">[<a ng-href="./news.html?catId={{categories[item.catId].id}}">{{categories[item.catId].name}}</a>]</span></span>
+					</footer>
+				</article>
+
+			</div>
+
+			<div class="sidebar right">
+				
+			
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<ng-include src="viewsFooter"></ng-include>
+
+	<!-- <script src="js/angular.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/main.js"></script> -->
+<script src="assets/scripts/libs.js"></script>
+<script src="assets/scripts/main.js"></script>
+
+</body>
+</head>

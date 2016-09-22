@@ -1,0 +1,33 @@
+.container {
+	width: 960px;
+}
+
+.main-area {
+	&.mg-navbar {
+		padding-top: 100px;
+	}
+	.main-content {
+		width: 720px;
+	}
+	.sidebar {
+		width: 240px;
+	}
+	.wide {
+		width: 100%;
+	}
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+	}
+	h3 {
+		line-height: 50px;
+		font-size: 30px;
+		.en {
+			margin-left: 12px;
+			font-size: 12px;
+			line-height: 50px;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+<header class="index-header" ng-controller="indexHeaderCtrl">
+	<div class="bg-slide">
+		<div class="slide-item" ng-repeat="item in slides" ng-style="{'background-image': 'url(' + item.img + ')'}" ng-class="{'active': item.active}"></div>
+	</div>
+	<nav class="header-nav">
+		<div class="header-brand">村村村</div>
+		<ul class="nav-list">
+			<li class="nav-item" ng-repeat="item in siteMenu" ng-class-odd="'left'" ng-class-even="'right'">
+				<a ng-href="{{item.href}}" class="nav-anchor" ng-class="{'disabled': item.href == '#'}"><span class="ja">{{item.ja}}</span></a>
+			</li>
+		</ul>
+	</nav>
+	<a href="#main" class="go-content" data-offsetY="0" data-speed="250" ng-if="sp == 'pc'">
+		<span class="icon ion-ios-arrow-down"></span>
+		<span class="text">今月のおすすめ・営業日</span>
+	</a>
+</header>

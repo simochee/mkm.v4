@@ -1,0 +1,11 @@
+.useragent-pc {
+	@import "navbar";
+	@import "footer";
+
+	@import "main-general";
+
+	@import "index";
+	@import "menu-list";
+	@import "menu-tree";
+	@import "news";
+}

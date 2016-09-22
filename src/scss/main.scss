@@ -1,2 +1,13 @@
 @import "compass";
 @import "compass/reset";
+
+@import "common/fonts";
+@import "common/colors";
+
+@import "common/general";
+@import "common/footer";
+
+@import "common/index";
+
+@import "pc/main";
+@import "sp/main";

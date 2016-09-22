@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myapp" resize ng-controller="appCtrl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>お品書き | 村村村</title>
+	<link rel="stylesheet" href="css/ionicons.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-controller="menuCtrl" ng-class="'useragent-' + ua">
+
+	<ng-include src="viewsNavbar"></ng-include>
+
+	<main class="main-area">
+
+		<div class="container">
+
+			<div class="content-header" ng-style="{'background-image': 'url(' + headerBg + ')'}">
+	<div class="header-outline">
+		<h2>
+			<span class="ja" ng-cloak>{{pageName.ja}}</span>
+			<span class="en" ng-cloak>{{pageName.en}}</span>
+		</h2>
+	</div>
+</div>
+
+
+			<div class="main-content left menu-list">
+
+				<div ng-repeat="cat in menuList">
+					<h3>
+						<span class="ja">{{cat.ja}}</span>
+						<span class="en">{{cat.en}}</span>
+					</h3>
+
+					<div ng-repeat="class in cat.list">
+						<h4>
+							<span class="ja">{{class.ja}}</span>
+							<span class="en">{{class.en}}</span>
+						</h4>
+
+						<ul class="menu-items">
+							<li ng-repeat="item in class.menu">
+								<div class="menu-left">
+									<h5>{{item.name}}</h5>
+									<div class="price">{{item.price | number}}円</div>
+									<p ng-bind-html="item.comment"></p>
+								</div>
+								<div class="menu-right" ng-if="item.img != null">
+									<div class="thumb" ng-style="{'background-image': 'url(' + item.img + ')'}"></div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="sidebar right">
+
+				<div class="menu-tree tracking-class" data-offset="95" data-start="180" data-end="">
+
+					<div ng-repeat="cat in menuList">
+						<h4><span>{{cat.ja}}</span></h4>
+						<ul>
+							<li ng-repeat="item in cat.list">
+								<a href="#">{{item.ja}}</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<ng-include src="viewsFooter"></ng-include>
+
+	<!-- <script src="js/angular.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/main.js"></script> -->
+<script src="assets/scripts/libs.js"></script>
+<script src="assets/scripts/main.js"></script>
+
+</body>
+</head>

@@ -1,0 +1,97 @@
+.index-header {
+	border: 5px solid  #000;
+	.header-nav {
+		$size: 180px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 300px;
+		height: 375px;
+		margin: -(375px / 2) -150px;
+		.header-brand {
+			overflow: hidden;
+			width: $size;
+			height: 0;
+			margin: 0 auto;
+			padding-top: $size;
+			background: url(../img/logo.svg) center center no-repeat #000;
+			background-size: 80%;
+		}
+	}
+
+	.nav-list {
+		width: 300px;
+		margin-top: 15px;
+		.nav-item {
+			width: 140px;
+			height: 60px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 16px;
+			font-family: Dejima;
+			&.left {
+				float: left;
+				clear: both;
+			}
+			&.right {
+				float: right;
+			}
+			.nav-anchor {
+				$animate: .3s;
+				display: block;
+				width: 100%;
+				height: 50px;
+				margin: 5px 0;
+				border: 2px solid  #fff;
+				box-sizing: border-box;
+				text-decoration: none;
+				z-index: 1;
+				color: #fff;
+				@include transition(border-color $animate ease, background-color $animate ease);
+				&.disabled {
+					background: rgba(#fff, 0.2);
+					border: none;
+					opacity: 0.8;
+					cursor: default;
+				}			
+				&:not(.disabled):hover {
+					background-color: #000;
+					border-color: #000;
+				}
+			}
+		}
+	}
+}
+
+.monthly-recommend {
+	width: 100%;
+	.eyecatch {
+		img {
+			width: 100%;
+		}
+	}
+	.details {
+		overflow: hidden;
+		margin: 10px 16px;
+		.name {
+			float: left;
+			margin-bottom: 10px;
+			color: $orange;
+			font-size: 18px;
+			font-family: Dejima;
+			line-height: 20px;
+		}
+		.price {
+			float: right;
+			color: #aaa;
+			line-height: 20px;
+			font-size: 12px;
+		}
+		.comment {
+			clear: both;
+			margin: 3px 10px 0;
+			font-size: 14px;
+			color: #ccc;
+		}
+	}
+}

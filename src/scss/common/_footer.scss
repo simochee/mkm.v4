@@ -1,0 +1,15 @@
+.global-footer {
+	width: 100%;
+	background: center center no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+	.footer-wrapper {
+		.footer-brand {
+			overflow: hidden;
+			height: 0;
+			margin: 0 auto;
+			background: url(../img/logo.svg) center center no-repeat;
+			background-size: contain;
+		}
+	}
+}

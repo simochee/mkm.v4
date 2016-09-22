@@ -2,6 +2,7 @@
   "name": "mkm.v4",
   "dependencies": {},
   "globalDependencies": {
-    "angular": "registry:dt/angular#1.5.0+20160921143830"
+    "angular": "registry:dt/angular#1.5.0+20160921143830",
+    "jquery": "registry:dt/jquery#1.10.0+20160908203239"
   }
 }

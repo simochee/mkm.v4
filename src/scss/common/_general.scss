@@ -1,0 +1,75 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+body {
+	color: #fff;
+}
+
+.container {
+	display: block;
+	margin: 0 auto;
+}
+
+.ff-serif {
+	font-family: serif;
+}
+
+.main-area {
+	overflow: hidden;
+	max-width: 100%;
+	padding-bottom: 50px;
+	background: #000;
+	h3 {
+		font-family: Dejima;
+		.en {
+			color: #aaa;
+		}
+	}
+	.content-header {
+		overflow: hidden;
+		width: 100%;
+		height: 350px;
+		background: center center;
+		background-size: cover;
+		.header-outline {
+			position: relative;
+			width: 100%;
+			height: 270px;
+			margin-top: 80px;
+			h2 {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				bottom: 30px;
+				right: 30px;
+				background: rgba(#000, 0.6);
+				.ja,
+				.en {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					display: block;
+					width: 100%;
+					text-align: center;
+				}
+				.ja {
+					height: 60px;
+					margin-top: -40px;
+					font-family: Dejima;
+					font-size: 55px;
+					line-height: 60px;
+				}
+				.en {
+					height: 40px;
+					margin-top: 20px;
+					line-height: 40px;
+					font-size: 18px;
+					line-height: 40px;
+				}
+			}
+		}
+	}
+}

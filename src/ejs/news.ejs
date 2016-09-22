@@ -1,0 +1,47 @@
+<%- include('./views/_head', {
+	pageName: 'おしらせ',
+	controller: 'News'
+}) %>
+
+	<ng-include src="viewsNavbar"></ng-include>
+
+	<main class="main-area">
+		
+		<div class="container">
+			
+			<%- include('./views/_header', {
+				bg: 'headerBg',
+				pageName: 'pageName'
+			}) %>
+
+			<div class="main-content left">
+				
+				<article class="news-article" ng-repeat="item in articles">
+					<header class="header">
+						<h3>{{item.title}}</h3>
+						<div class="date">{{dateFormat(item.date)}}</div>
+					</header>
+					<main class="body" ng-bind-html="item.body"></main>
+					<footer class="footer">
+						<span class="posted">Posted at <span class="date">{{dateFormat(item.date)}}</span><span class="time">{{timeFormat(item.time)}}</span><span class="category">[<a ng-href="./news.html?catId={{categories[item.catId].id}}">{{categories[item.catId].name}}</a>]</span></span>
+					</footer>
+				</article>
+
+			</div>
+
+			<div class="sidebar right">
+				
+			
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<ng-include src="viewsFooter"></ng-include>
+
+	<% include views/_scripts %>
+
+</body>
+</head>
