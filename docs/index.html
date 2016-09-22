@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myapp" resize ng-controller="appCtrl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>トップページ | 村村村</title>
+	<link rel="stylesheet" href="css/ionicons.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-controller="indexCtrl" ng-class="'useragent-' + ua">
+
+  <ng-include src="viewsNavbar"></ng-include>
+
+  <ng-include src="viewsIndexHeader"></ng-include>
+
+  <main class="main-area mg-navbar" id="main">
+
+    <div class="container">
+      <div class="main-content left">
+        <div class="monthly-recommend">
+          <h3><span class="ja">今月のおすすめ</span><span class="en">Monthly Recommend</span></h3>
+          <div class="recommend" ng-init="recItem = menuList[0].list[0].menu[2]">
+            <div class="eyecatch">
+              <img ng-src="{{recItem.img}}" alt="{{recItem.name}}">
+            </div>
+            <div class="details">
+              <div class="name">
+                {{recItem.name}}
+              </div>
+              <div class="price">
+                {{recItem.price | number}}円
+              </div>
+              <div class="comment" ng-bind-html="recItem.comment"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar right">
+        <h4>営業日カレンダー</h4>
+        <ng-include src="'common/opening-calendar.html'"></ng-include>
+      </div>
+    </div>
+  </main>
+
+  <ng-include src="viewsFooter"></ng-include>
+
+  <script src="js/angular.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

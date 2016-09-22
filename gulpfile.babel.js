@@ -2,8 +2,9 @@ import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import minifyCSS from 'gulp-minify-css';
 import typescript from 'gulp-typescript';
-import pug from 'gulp-pug';
+import ejs from 'gulp-ejs';
 import connect from 'gulp-connect';
+import fs from 'fs';
 
 gulp.task('connect', () => {
   connect.server({
@@ -12,12 +13,13 @@ gulp.task('connect', () => {
   });
 });
 
-gulp.task('pug', () => {
-  gulp.src('./src/views/**/!(_)*.pug', {
-    base: 'src'
+gulp.task('ejs', () => {
+  const json = JSON.parse(fs.readFileSync('package.json'));
+  gulp.src('./src/ejs/**/!(_)*.ejs', {
+    base: 'src/ejs'
   })
   .pipe(plumber())
-  .pipe(pug())
+  .pipe(ejs(json, {'ext': '.html'}))
   .pipe(gulp.dest('./docs'));
 });
 
@@ -30,8 +32,8 @@ gulp.task('ts', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./src/views/**/!(_)*.pug', ['pug']);
+  gulp.watch('./src/views/**/!(_)*.ejs', ['ejs']);
   gulp.watch('./src/scripts/**/*.ts', ['ts']);
 });
 
-gulp.task('default', ['watch', 'connect', 'pug', 'ts']);
+gulp.task('default', ['watch', 'connect', 'ejs', 'ts']);
