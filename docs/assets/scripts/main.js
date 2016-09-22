@@ -2,7 +2,6 @@
 var app = angular.module('myapp', ['ngSanitize', 'ngResource']);
 // Get Device Infomations
 app.service('info', function () {
-    var _this = this;
     this._ua = function (u) {
         return {
             Tablet: (u.indexOf("windows") != -1 && u.indexOf("touch") != -1 && u.indexOf("tablet pc") == -1)
@@ -21,7 +20,8 @@ app.service('info', function () {
         };
     };
     this.ua = function () {
-        if (_this._ua.Tablet || _this._ua.Mobile) {
+        return 'sp';
+        if (this._ua.Tablet || this._ua.Mobile) {
             return 'sp';
         }
         else {
