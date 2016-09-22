@@ -1,0 +1,7 @@
+{
+  "name": "mkm.v4",
+  "dependencies": {},
+  "globalDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160921143830"
+  }
+}
