@@ -38,7 +38,7 @@ async.series([
       }
       let tmpOuter = null;
       let tmpInner = {
-        title: null, items: []
+        title: null, menu: []
       };
       for(let i = 0, len = cells.length; i < len; i += 4) {
         const cell = cells[i];
@@ -49,25 +49,34 @@ async.series([
           if(tmpOuter !== null) {
             json.push(tmpOuter);
           }
-          tmpOuter = [];
+          const ja = cells[i + 1].value;
+          const en = cells[i + 2].value;
+          tmpOuter = {
+            ja,
+            en,
+            list: []
+          };
         }
         // 小見出し行処理
-        if(cell.value === '##') {
+        else if(cell.value === '##') {
           if(tmpInner.title !== null) {
-            tmpOuter.push(tmpInner);
+            tmpOuter.list.push(tmpInner);
           }
+          const ja = cells[i + 1].value;
+          const en = cells[i + 2].value;
           tmpInner = {
-            title: cells[i + 1].value,
-            items: []
+            ja,
+            en,
+            menu: []
           }
         }
         // メニューリスト処理
-        if(cell.value !== '') {
+        else if(cell.value !== '') {
           const name = cell.value;
           const price = cells[i + 1].value;
           const image = cells[i + 2].value;
           const comment = cells[i + 3].value;
-          tmpInner.items.push({
+          tmpInner.menu.push({
             name,
             price,
             image,

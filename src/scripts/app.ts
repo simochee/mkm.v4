@@ -31,10 +31,10 @@ app.service('info', function() {
 });
 
 // Get Menu List json file
-app.service('menuList', ['$resource', ($resource) => {
-  const res: any = $resource('/public/menu-list.json');
+app.factory('getJSON', ['$resource', ($resource) => {
   return {
-    get: () => {
+    get: (file) => {
+      const res: any = $resource(file);
       return res.query();
     }
   }

@@ -39,7 +39,8 @@ gulp.task('libs', () => {
   gulp.src([
     './node_modules/angular/angular.js',
     './node_modules/angular-sanitize/angular-sanitize.js',
-    './node_modules/angular-resource/angular-resource.js'
+    './node_modules/angular-resource/angular-resource.js',
+    './node_modules/moment/moment.js'
   ])
   .pipe(concat('libs.js'))
   .pipe(gulp.dest('./docs/assets/scripts'));

@@ -40,9 +40,9 @@ app.controller('footerCtrl', ['$scope', ($scope) => {
 
 }]);
 
-app.controller('indexCtrl', ['$scope', 'info', 'menuList', ($scope, info, menuList) => {
+app.controller('indexCtrl', ['$scope', 'info', 'getJSON', ($scope, info, getJSON) => {
   $scope.viewsIndexHeader = '/common/index-header.html';
-  $scope.menuList = menuList.get();
+  $scope.menuList = getJSON.get('/public/menu-list.json');
 }]);
 
 app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) => {
@@ -71,9 +71,26 @@ app.controller('openCalCtrl', ['$scope', '$timeout', 'utils', ($scope, $timeout,
 }]);
 
 
-app.controller('menuCtrl', ['$scope', 'menuList', function($scope, menuList) {
+app.controller('menuCtrl', ['$scope', 'getJSON', function($scope, getJSON) {
   $scope.headerBg = '../assets/img/header/menu.jpg';
   $scope.pageName = { ja: 'お品書き', en: 'Menu' };
-  $scope.menuList = menuList.get();
+  $scope.menuList = getJSON.get('/public/menu-list.json');
   console.log($scope.menuList);
+}]);
+
+app.controller('newsCtrl', ['$scope', 'getJSON', ($scope, getJSON) => {
+  $scope.headerBg = '../assets/img/header/news.jpg';
+  $scope.pageName = { ja: 'おしらせ', en: 'News' };
+
+  // $scope.articles = getJSON.get();
+  // $scope.categories = getJSON.get();
+
+  $scope.dateFormat = function(date) {
+    var m = moment(date);
+    return m.format('YYYY/MM/DD');
+  }
+  $scope.timeFormat = function(time) {
+    var m = moment(time, 'hh:mm:ss');
+    return m.format('hh:mm A');
+  }
 }]);

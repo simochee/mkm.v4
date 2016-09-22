@@ -47,6 +47,9 @@
 				float: left;
 				width: 420px;
 				padding: 8px 0;
+				&.wide {
+					width: 100%;
+				}
 				h5 {
 					float: left;
 					font-size: 20px;

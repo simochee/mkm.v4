@@ -42,9 +42,9 @@
 
 						<ul class="menu-items">
 							<li ng-repeat="item in class.menu">
-								<div class="menu-left">
+								<div class="menu-left" ng-class="{wide: item.image === ''}">
 									<h5>{{item.name}}</h5>
-									<div class="price">{{item.price | number}}円</div>
+									<div class="price">{{item.price | number}}{{item.price === '時価' ? '時価' : '円'}}</div>
 									<p ng-bind-html="item.comment"></p>
 								</div>
 								<div class="menu-right" ng-if="item.img != null">

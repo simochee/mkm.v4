@@ -30,10 +30,10 @@ app.service('info', function () {
     };
 });
 // Get Menu List json file
-app.service('menuList', ['$resource', function ($resource) {
-        var res = $resource('/public/menu-list.json');
+app.factory('getJSON', ['$resource', function ($resource) {
         return {
-            get: function () {
+            get: function (file) {
+                var res = $resource(file);
                 return res.query();
             }
         };
@@ -87,9 +87,9 @@ app.controller('navbarCtrl', ['$scope', function ($scope) {
     }]);
 app.controller('footerCtrl', ['$scope', function ($scope) {
     }]);
-app.controller('indexCtrl', ['$scope', 'info', 'menuList', function ($scope, info, menuList) {
+app.controller('indexCtrl', ['$scope', 'info', 'getJSON', function ($scope, info, getJSON) {
         $scope.viewsIndexHeader = '/common/index-header.html';
-        $scope.menuList = menuList.get();
+        $scope.menuList = getJSON.get('/public/menu-list.json');
     }]);
 app.controller('indexHeaderCtrl', ['$scope', '$interval', function ($scope, $interval) {
         var imgPath = './assets/img/index-pic';
@@ -113,9 +113,23 @@ app.controller('indexHeaderCtrl', ['$scope', '$interval', function ($scope, $int
     }]);
 app.controller('openCalCtrl', ['$scope', '$timeout', 'utils', function ($scope, $timeout, utils) {
     }]);
-app.controller('menuCtrl', ['$scope', 'menuList', function ($scope, menuList) {
+app.controller('menuCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
         $scope.headerBg = '../assets/img/header/menu.jpg';
         $scope.pageName = { ja: 'お品書き', en: 'Menu' };
-        $scope.menuList = menuList.get();
+        $scope.menuList = getJSON.get('/public/menu-list.json');
         console.log($scope.menuList);
+    }]);
+app.controller('newsCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
+        $scope.headerBg = '../assets/img/header/news.jpg';
+        $scope.pageName = { ja: 'おしらせ', en: 'News' };
+        // $scope.articles = getJSON.get();
+        // $scope.categories = getJSON.get();
+        $scope.dateFormat = function (date) {
+            var m = moment(date);
+            return m.format('YYYY/MM/DD');
+        };
+        $scope.timeFormat = function (time) {
+            var m = moment(time, 'hh:mm:ss');
+            return m.format('hh:mm A');
+        };
     }]);

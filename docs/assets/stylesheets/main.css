@@ -620,32 +620,36 @@ body {
   padding: 8px 0;
 }
 /* line 50, ../../../src/scss/pc/_menu-list.scss */
+.useragent-pc .menu-list .menu-items li .menu-left.wide {
+  width: 100%;
+}
+/* line 53, ../../../src/scss/pc/_menu-list.scss */
 .useragent-pc .menu-list .menu-items li .menu-left h5 {
   float: left;
   font-size: 20px;
   font-family: Dejima;
   color: #e67928;
 }
-/* line 56, ../../../src/scss/pc/_menu-list.scss */
+/* line 59, ../../../src/scss/pc/_menu-list.scss */
 .useragent-pc .menu-list .menu-items li .menu-left .price {
   float: right;
   font-size: 14px;
   font-weight: bold;
   color: #aaa;
 }
-/* line 62, ../../../src/scss/pc/_menu-list.scss */
+/* line 65, ../../../src/scss/pc/_menu-list.scss */
 .useragent-pc .menu-list .menu-items li .menu-left p {
   clear: both;
   padding: 8px 14px;
   font-size: 13px;
   line-height: 20px;
 }
-/* line 69, ../../../src/scss/pc/_menu-list.scss */
+/* line 72, ../../../src/scss/pc/_menu-list.scss */
 .useragent-pc .menu-list .menu-items li .menu-right {
   float: right;
   width: 200px;
 }
-/* line 72, ../../../src/scss/pc/_menu-list.scss */
+/* line 75, ../../../src/scss/pc/_menu-list.scss */
 .useragent-pc .menu-list .menu-items li .menu-right .thumb {
   width: 200px;
   height: 120px;
