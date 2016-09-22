@@ -1,3 +1,3 @@
 http_path = "/"
-css_dir = "src/scss"
-sass_dir = "docs/assets/stylesheets"
+css_dir = "docs/assets/stylesheets"
+sass_dir = "src/scss"

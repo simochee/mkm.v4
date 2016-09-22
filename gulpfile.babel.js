@@ -45,9 +45,17 @@ gulp.task('libs', () => {
   .pipe(gulp.dest('./docs/assets/scripts'));
 });
 
+gulp.task('public', () => {
+  gulp.src('./src/public/**/*', {
+    base: 'src/public'
+  })
+  .pipe(gulp.dest('./docs/assets'));
+})
+
 gulp.task('watch', () => {
   gulp.watch('./src/ejs/**/*.ejs', ['ejs']);
   gulp.watch('./src/scripts/**/*.ts', ['ts']);
+  gulp.watch('./src/public/**/*', ['public']);
 });
 
-gulp.task('default', ['watch', 'connect', 'ejs', 'ts']);
+gulp.task('default', ['watch', 'connect', 'ejs', 'ts', 'public']);
