@@ -707,15 +707,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-decoration: none;
   text-align: center;
   color: #fff;
+  -moz-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
 }
-/* line 61, ../../../src/scss/sp/_navbar.scss */
+/* line 62, ../../../src/scss/sp/_navbar.scss */
+.useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor:hover {
+  color: #e67928;
+}
+/* line 65, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor .ja {
   display: block;
   font-size: 24px;
   line-height: 25px;
   font-family: Dejima;
 }
-/* line 67, ../../../src/scss/sp/_navbar.scss */
+/* line 71, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor .en {
   display: block;
   margin-top: 5px;
@@ -723,7 +731,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   line-height: 16px;
   font-family: sans-serif;
 }
-/* line 77, ../../../src/scss/sp/_navbar.scss */
+/* line 81, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse .btn-close {
   display: block;
   width: 200px;

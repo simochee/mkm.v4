@@ -79,7 +79,8 @@ app.controller('appCtrl', ['$scope', 'info', function ($scope, info) {
                 href: '#', ja: 'お得な情報', en: 'Discount'
             },
             {
-                href: 'info.html', ja: '店舗情報', en: 'Information'
+                // href: 'info.html', ja: '店舗情報', en: 'Information'
+                href: '#', ja: '店舗情報', en: 'Information'
             },
             {
                 href: 'reserve.html', ja: 'ご予約', en: 'Reservation'

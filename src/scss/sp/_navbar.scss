@@ -58,6 +58,10 @@
 				text-decoration: none;
 				text-align: center;
 				color: #fff;
+				@include transition(color .2s ease);
+				&:hover {
+					color: $orange;
+				}
 				.ja {
 					display: block;
 					font-size: 24px;
