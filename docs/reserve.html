@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myapp" resize ng-controller="appCtrl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>ご予約 | 村村村</title>
+	<link rel="stylesheet" href="./assets/stylesheets/ionicons.css">
+	<link rel="stylesheet" href="./assets/stylesheets/main.css">
+</head>
+
+<body ng-controller="reserveCtrl" ng-class="'useragent-' + ua">
+
+  <ng-include src="viewsNavbar"></ng-include>
+
+  <main class="main-area">
+
+    <div class="container">
+
+      <div class="content-header" ng-style="{'background-image': 'url(' + headerBg + ')'}">
+	<div class="header-outline">
+		<h2>
+			<span class="ja" ng-cloak>{{pageName.ja}}</span>
+			<span class="en" ng-cloak>{{pageName.en}}</span>
+		</h2>
+	</div>
+</div>
+
+
+      <div class="main-content center">
+
+        <form action="#" name="bookForm" class="form-large" novalidate>
+          <div class="form-col">
+            <label for="name">お名前</label>
+            <input type="text" id="name" ng-class="{error: bookForm.userName.$error.required}" name="userName" ng-model="user.name" required>
+            <div class="help-area">
+              <span ng-class="{error: bookForm.userName.$error.required}">入力必須</span>
+            </div>
+          </div>
+          <div class="form-col">
+            <label for="nameKana">フリガナ</label>
+            <input type="text" id="nameKana" ng-class="{error: bookForm.userKana.$error.required}" name="userKana" ng-model="user.kana" required>
+            <div class="help-area">
+              <span ng-class="{error: bookForm.userKana.$error.required}">入力必須</span>
+            </div>
+          </div>
+          <div class="form-col">
+            <label for="mail">メール</label>
+            <input type="email" ng-class="{error: bookForm.userEmail.$error.required}" placeholder="aaa@example.com" name="userEmail" ng-model="user.mail" required>
+            <div class="help-area">
+              <span ng-class="{error: bookForm.userEmail.$error.required}">入力必須</span>
+            </div>
+          </div>
+          <div class="form-col">
+            <label for="data">ご希望日時</label>
+            <div class="datetime">
+              <input type="date" class="date" ng-class="{error: bookForm.userDate.$error.required}" name="userDate" ng-model="user.date" ng-value="today" min="{{today}}" max="{{max}}" placeholder="{{today}} 日付" required>
+              <input type="time" class="time" ng-class="{error: bookForm.userTime.$error.required}" name="userTime" ng-model="user.time" ng-value="'17:00'" min="17:00" max="21:00" step="900" placeholder="19:30 時間帯" required>
+            </div>
+            <div class="help-area">
+              <span ng-class="{error: bookForm.userDate.$error.required || bookForm.userTime.$error.required}">必須項目</span>
+            </div>
+          </div>
+          <div class="form-col">
+            <label for="number">人数</label>
+            <input type="number" ng-class="{error: bookForm.userNum.$error.required}" id="number" name="userNum" ng-model="user.num" min="1" ng-value="'1'" required>
+            <div class="help-area">
+              <span ng-class="{error: bookForm.userNum.$error.required}">必須項目</span>
+            </div>
+          </div>
+          <div class="form-col textarea">
+            <label for="remark">その他</label>
+            <textarea id="remark" placeholder="ご質問などございましたらご入力ください"></textarea>
+            <div class="help-area"></div>
+          </div>
+          <button type="submit" class="btn ghost" ng-submit="mailto()" ng-disabled="bookForm.$invalid">送信</button>
+        </form>
+
+      </div>
+
+      <div class="sidebar right">
+
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <ng-include src="viewsFooter"></ng-include>
+
+  <!-- <script src="js/angular.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/main.js"></script> -->
+<script src="assets/scripts/libs.js"></script>
+<script src="assets/scripts/main.js"></script>
+
+</body>
+</head>

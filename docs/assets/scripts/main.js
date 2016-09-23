@@ -123,16 +123,14 @@ app.controller('menuCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
         $scope.headerBg = './assets/img/header/menu.jpg';
         $scope.pageName = { ja: 'お品書き', en: 'Menu' };
         $scope.menuList = getJSON.get('./public/menu-list.json');
-        console.log($scope.menuList);
         // トラッキング
         (function () {
             var $elem = document.getElementById('sidebar');
             window.addEventListener('scroll', function (e) {
-                var position = e.target.scrollingElement.scrollTop;
+                var position = window.pageYOffset;
                 var elemH = $elem.scrollHeight;
                 var contentH = document.body.scrollHeight - document.querySelector('.global-footer').clientHeight - 20;
                 var offset = 65;
-                console.log(position + elemH, contentH);
                 if (position + offset > contentH - elemH) {
                     $elem.style.position = 'absolute';
                     $elem.style.top = (contentH - elemH) + "px";
@@ -160,4 +158,8 @@ app.controller('newsCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
             var m = moment(time, 'hh:mm:ss');
             return m.format('hh:mm A');
         };
+    }]);
+app.controller('reserveCtrl', ['$scope', function ($scope) {
+        $scope.headerBg = './assets/img/header/reserve.jpg';
+        $scope.pageName = { ja: 'ご予約', en: 'Reservation' };
     }]);
