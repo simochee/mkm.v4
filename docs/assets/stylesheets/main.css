@@ -690,7 +690,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   left: 0;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
   z-index: 99999;
 }
 /* line 49, ../../../src/scss/sp/_navbar.scss */
