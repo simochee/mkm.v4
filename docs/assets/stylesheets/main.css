@@ -713,24 +713,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   font-size: 24px;
   line-height: 25px;
+  font-family: Dejima;
 }
-/* line 66, ../../../src/scss/sp/_navbar.scss */
+/* line 67, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor .en {
   display: block;
   margin-top: 5px;
   font-size: 12px;
   line-height: 16px;
+  font-family: sans-serif;
 }
-/* line 75, ../../../src/scss/sp/_navbar.scss */
+/* line 77, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse .btn-close {
   display: block;
   width: 200px;
   height: 40px;
   margin: 10px auto 0;
   border: 1px solid  #fff;
+  background: none;
   line-height: 40px;
   text-align: center;
-  background: none;
+  font-family: sans-serif;
 }
 /* line 1, ../../../src/scss/sp/_footer.scss */
 .useragent-sp .global-footer {
