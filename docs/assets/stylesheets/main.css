@@ -173,6 +173,21 @@ body {
   background-size: contain;
 }
 
+/* line 2, ../../../src/scss/common/_sidebar.scss */
+.sidebar h4 {
+  display: block;
+  margin-top: 30px;
+  padding: 12px 10px;
+  font-family: Dejima;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+/* line 10, ../../../src/scss/common/_sidebar.scss */
+.sidebar h4:first-child {
+  margin-top: 15px;
+}
+
 /* line 1, ../../../src/scss/common/_index.scss */
 .index-header {
   position: relative;

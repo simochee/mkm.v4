@@ -48,9 +48,19 @@ app.controller('footerCtrl', ['$scope', ($scope) => {
 
 }]);
 
-app.controller('indexCtrl', ['$scope', 'info', 'getJSON', ($scope, info, getJSON) => {
+app.controller('indexCtrl', ['$scope', '$timeout', 'info', 'getJSON', ($scope, $timeout, info, getJSON) => {
   $scope.viewsIndexHeader = './common/index-header.html';
-  $scope.menuList = getJSON.get('./public/menu-list.json');
+  $scope.recommendList = getJSON.get('./public/recommend.json');
+
+  $timeout(() => {
+    for(let i = 0, len = $scope.recommendList.length; i < len; i++) {
+      const elem = $scope.recommendList[i];
+      if(new Date(elem.start) <= new Date) {
+        $scope.recItem = elem;
+        break;
+      }
+    }
+  });
 }]);
 
 app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) => {
@@ -74,8 +84,22 @@ app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) =>
   }, 5000);
 }]);
 
-app.controller('openCalCtrl', ['$scope', '$timeout', 'utils', ($scope, $timeout, utils) => {
-
+app.controller('sidebarOpenCtrl', ['$scope', '$timeout', '$resource', ($scope, $timeout, $resource) => {
+  const res = $resource('./public/open.json');
+  const open = res.query(() => {
+    let info = null;
+    const today = moment().format("YYYY-MM-DD");
+    for(let i = 1, len = open.length; i < len; i++) {
+      const item = open[i];
+      if(item.date === today) {
+        $scope.info = item;
+        break;
+      }
+    }
+    if(info === null) {
+      $scope.info = open[0];
+    }
+  });
 }]);
 
 

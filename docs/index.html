@@ -20,9 +20,9 @@
       <div class="main-content left">
         <div class="monthly-recommend">
           <h3><span class="ja">今月のおすすめ</span><span class="en">Monthly Recommend</span></h3>
-          <div class="recommend" ng-init="recItem = menuList[0].list[0].menu[2]">
+          <div class="recommend">
             <div class="eyecatch">
-              <img ng-src="{{recItem.img}}" alt="{{recItem.name}}">
+              <img ng-src="{{recItem.image}}" alt="{{recItem.name}}">
             </div>
             <div class="details">
               <div class="name">
@@ -37,8 +37,7 @@
         </div>
       </div>
       <div class="sidebar right">
-        <h4>営業日カレンダー</h4>
-        <ng-include src="'common/opening-calendar.html'"></ng-include>
+        <ng-include src="'common/sidebar.html'"></ng-include>
       </div>
     </div>
   </main>

@@ -34,6 +34,10 @@ app.factory('getJSON', ['$resource', function ($resource) {
             get: function (file) {
                 var res = $resource(file);
                 return res.query();
+            },
+            info: function () {
+                var res = $resource('./public/info.json');
+                return res.query();
             }
         };
     }]);
@@ -93,9 +97,18 @@ app.controller('navbarCtrl', ['$scope', function ($scope) {
     }]);
 app.controller('footerCtrl', ['$scope', function ($scope) {
     }]);
-app.controller('indexCtrl', ['$scope', 'info', 'getJSON', function ($scope, info, getJSON) {
+app.controller('indexCtrl', ['$scope', '$timeout', 'info', 'getJSON', function ($scope, $timeout, info, getJSON) {
         $scope.viewsIndexHeader = './common/index-header.html';
-        $scope.menuList = getJSON.get('./public/menu-list.json');
+        $scope.recommendList = getJSON.get('./public/recommend.json');
+        $timeout(function () {
+            for (var i = 0, len = $scope.recommendList.length; i < len; i++) {
+                var elem = $scope.recommendList[i];
+                if (new Date(elem.start) <= new Date) {
+                    $scope.recItem = elem;
+                    break;
+                }
+            }
+        });
     }]);
 app.controller('indexHeaderCtrl', ['$scope', '$interval', function ($scope, $interval) {
         var imgPath = './assets/img/index-pic';
@@ -117,7 +130,22 @@ app.controller('indexHeaderCtrl', ['$scope', '$interval', function ($scope, $int
             }
         }, 5000);
     }]);
-app.controller('openCalCtrl', ['$scope', '$timeout', 'utils', function ($scope, $timeout, utils) {
+app.controller('sidebarOpenCtrl', ['$scope', '$timeout', '$resource', function ($scope, $timeout, $resource) {
+        var res = $resource('./public/open.json');
+        var open = res.query(function () {
+            var info = null;
+            var today = moment().format("YYYY-MM-DD");
+            for (var i = 1, len = open.length; i < len; i++) {
+                var item = open[i];
+                if (item.date === today) {
+                    $scope.info = item;
+                    break;
+                }
+            }
+            if (info === null) {
+                $scope.info = open[0];
+            }
+        });
     }]);
 app.controller('menuCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
         $scope.headerBg = './assets/img/header/menu.jpg';

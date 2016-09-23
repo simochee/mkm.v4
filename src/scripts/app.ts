@@ -36,7 +36,11 @@ app.factory('getJSON', ['$resource', ($resource) => {
     get: (file) => {
       const res: any = $resource(file);
       return res.query();
-    }
+    },
+    info: () => {
+      const res: any = $resource('./public/info.json');
+      return res.query();
+    },
   }
 }]);
 

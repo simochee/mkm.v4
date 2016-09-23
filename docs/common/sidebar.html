@@ -1,0 +1,9 @@
+<div ng-controller="sidebarOpenCtrl">
+	<h4>本日の営業時間</h4>
+	<div ng-if="info.type === 'close'">
+		本日休業日
+	</div>
+	<div ng-if="info.type === 'time'">
+		{{info.open}} - {{info.close}}
+	</div>
+</div>
