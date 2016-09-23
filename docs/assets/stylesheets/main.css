@@ -683,25 +683,54 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   text-decoration: none;
 }
-/* line 39, ../../../src/scss/sp/_navbar.scss */
-.useragent-sp .global-navbar:hover + .navbar-collapse {
-  display: block;
-  opacity: 1.0;
-}
-/* line 45, ../../../src/scss/sp/_navbar.scss */
+/* line 41, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse {
-  display: none;
   position: fixed;
   top: 55px;
   left: 0;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  opacity: 0;
-  -moz-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+}
+/* line 49, ../../../src/scss/sp/_navbar.scss */
+.useragent-sp .navbar-collapse .navbar-nav {
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+/* line 53, ../../../src/scss/sp/_navbar.scss */
+.useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+}
+/* line 61, ../../../src/scss/sp/_navbar.scss */
+.useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor .ja {
+  display: block;
+  font-size: 24px;
+  line-height: 25px;
+}
+/* line 66, ../../../src/scss/sp/_navbar.scss */
+.useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor .en {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 75, ../../../src/scss/sp/_navbar.scss */
+.useragent-sp .navbar-collapse .btn-close {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: 10px auto 0;
+  border: 1px solid  #fff;
+  line-height: 40px;
+  text-align: center;
+  background: none;
 }
 /* line 1, ../../../src/scss/sp/_footer.scss */
 .useragent-sp .global-footer {

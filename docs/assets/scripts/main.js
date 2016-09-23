@@ -94,6 +94,11 @@ app.controller('appCtrl', ['$scope', 'info', function ($scope, info) {
         };
     }]);
 app.controller('navbarCtrl', ['$scope', function ($scope) {
+        $scope.isOpen = false;
+        $scope.toggleNav = function () {
+            $scope.isOpen = ~$scope.isOpen;
+            return;
+        };
     }]);
 app.controller('footerCtrl', ['$scope', function ($scope) {
     }]);

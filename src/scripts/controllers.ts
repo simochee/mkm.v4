@@ -41,6 +41,11 @@ app.controller('appCtrl', ['$scope', 'info', ($scope, info) => {
 }]);
 
 app.controller('navbarCtrl', ['$scope', ($scope) => {
+  $scope.isOpen = false;
+  $scope.toggleNav = () => {
+     $scope.isOpen = ~$scope.isOpen;
+     return;
+  }
 
 }]);
 

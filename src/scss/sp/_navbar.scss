@@ -36,20 +36,50 @@
 			}
 		}
 	}
-	&:hover + .navbar-collapse {
-		display: block;
-		opacity: 1.0;
-	}
 }
 
 .navbar-collapse {
-	display: none;
 	position: fixed;
 	top: 55px;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	background: rgba(#000, 0.75);
-	opacity: 0;
-	@include transition(opacity .2s ease);
+	background: rgba(#000, 0.8);
+	z-index: 99999;
+	.navbar-nav {
+		padding: 10px 0;
+		box-sizing: border-box;
+		.nav-item {
+			.nav-anchor {
+				display: block;
+				width: 200px;
+				margin: 0 auto;
+				padding: 10px 0;
+				text-decoration: none;
+				text-align: center;
+				color: #fff;
+				.ja {
+					display: block;
+					font-size: 24px;
+					line-height: 25px;
+				}
+				.en {
+					display: block;
+					margin-top: 5px;
+					font-size: 12px;
+					line-height: 16px;
+				}
+			}
+		}
+	}
+	.btn-close {
+		display: block;
+		width: 200px;
+		height: 40px;
+		margin: 10px auto 0;
+		border: 1px solid  #fff;
+		line-height: 40px;
+		text-align: center;
+		background: none;
+	}
 }
