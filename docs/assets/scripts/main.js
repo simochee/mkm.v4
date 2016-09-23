@@ -146,7 +146,7 @@ app.controller('sidebarOpenCtrl', ['$scope', '$timeout', '$resource', function (
                 $scope.info = open[0];
             }
             var close = $scope.info.close.split(':');
-            var closeMoment = moment().set({ 'hour': close[0], 'minute': close[1] });
+            var closeMoment = moment($scope.info.close, 'HH:mm');
             $scope.lo = closeMoment.subtract($scope.info.lo, 'minutes').format('HH:mm');
         });
     }]);
@@ -179,8 +179,10 @@ app.controller('menuCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
 app.controller('newsCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
         $scope.headerBg = './assets/img/header/news.jpg';
         $scope.pageName = { ja: 'おしらせ', en: 'News' };
-        // $scope.articles = getJSON.get();
-        // $scope.categories = getJSON.get();
+        $scope.articles = getJSON.get('./public/articles.json');
+        $scope.markdown = function (md) {
+            return marked(md);
+        };
         $scope.dateFormat = function (date) {
             var m = moment(date);
             return m.format('YYYY/MM/DD');

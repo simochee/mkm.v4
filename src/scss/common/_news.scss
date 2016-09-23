@@ -1,0 +1,142 @@
+.news-article {
+	position: relative;
+	margin-top: 50px;
+	padding-bottom: 10px;
+	&::after {
+		content: "";
+		position: absolute;
+		left: 35px;
+		bottom: -1px;
+		width: 680px;
+		height: 1px;
+		@include background-image(linear-gradient(left, #000, #555, #000));
+	}
+	&:first-child {
+		margin-top: 25px;
+	}
+	.header {
+		h3 {
+			display: block;
+			position: relative;
+			width: 100%;
+			padding: 10px 8px;
+			box-sizing: border-box;
+			font-size: 24px;
+			line-height: 30px;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 90%;
+				height: 1px;
+				@include background-image(linear-gradient(left, #000, #aaa));
+			}
+		}
+		.date {
+			margin: 10px 10px 0 0;
+			text-align: right;
+			font-size: 12px;
+			color: #aaa;
+		}
+	}
+	.body {
+		width: 660px;
+		margin: 15px auto;
+		font-size: 14px;
+		line-height: 1.75;
+		p {
+			margin: 0.5em 0;
+		}
+		h1,
+		h2,
+		h3 {
+			font-family: Dejima;
+		}
+		h1 {
+			font-size: 1.8em;
+		}
+		h2 {
+			font-size: 1.5em;
+		}
+		h3 {
+			font-size: 1.2em;
+		}
+		img {
+			max-width: 98%;
+			margin: 10px auto;
+		}
+		ul {
+			li {
+				margin: 6px 15px 6px 25px;
+				text-indent: -1.2em;
+				&::before {
+					content: "・";
+					margin-right: 0.2em;
+				}
+			}
+		}
+		ol {
+			list-style-type: decimal;
+			li {
+				margin: 6px 15px 6px 25px;
+				padding-left: 0.2em;
+			}
+		}
+		em {
+			color: $orange;
+		}
+		strong {
+			font-weight: bold;
+		}
+		hr {
+			margin: 20px -10px;
+			border: {
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 1px solid  #777;
+			};
+		}
+	}
+	.footer {
+		width: 650px;
+		margin: 20px auto 0;
+		.posted {
+			font-size: 12px;
+			color: #888;
+			.date,
+			.time {
+				margin: 0 5px;
+				font-size: 13px;
+				color: #bbb;
+			}
+		}
+		.category {
+			font-size: 13px;
+			color: #999;
+			a {
+				padding: 0 5px;
+				color: #aaa;
+				&:hover {
+					text-decoration: none;
+					color: $orange;
+				}
+			}
+		}
+	}
+}
+
+.sidebar {
+	.open-time {
+		margin-top: 15px;
+		text-align: center;
+		font-size: 28px;
+	}
+	.lo-time {
+		margin-top: 10px;
+		text-align: center;
+		font-size: 16px;
+		color: #bbb;
+	}
+}

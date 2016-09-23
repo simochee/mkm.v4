@@ -4,14 +4,16 @@
 @import "common/fonts";
 @import "common/colors";
 
+@import "pc/main";
+@import "sp/main";
+
 @import "common/general";
 @import "common/footer";
 @import "common/sidebar";
 
 @import "common/index";
 @import "common/menu-list";
+@import "common/news";
 
 @import "common/form";
 
-@import "pc/main";
-@import "sp/main";
