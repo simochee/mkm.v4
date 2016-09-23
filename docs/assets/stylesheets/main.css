@@ -1141,3 +1141,7 @@ body {
   width: 92%;
   margin: 0 auto;
 }
+/* line 12, ../../../src/scss/sp/_menu-list.scss */
+.useragent-sp .menu-tree {
+  display: none;
+}
