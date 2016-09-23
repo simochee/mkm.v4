@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"gulp\" \"compass watch\"",
-    "make": "node ./dev/google-spreadsheet/app.js"
+    "make": "node ./dev/google-spreadsheet/app.js 2016秋"
   },
   "repository": {
     "type": "git",

@@ -131,14 +131,15 @@ app.controller('menuCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
                 var position = e.target.scrollingElement.scrollTop;
                 var elemH = $elem.scrollHeight;
                 var contentH = document.body.scrollHeight - document.querySelector('.global-footer').clientHeight - 20;
+                var offset = 65;
                 console.log(position + elemH, contentH);
-                if (position + 80 > contentH - elemH) {
+                if (position + offset > contentH - elemH) {
                     $elem.style.position = 'absolute';
                     $elem.style.top = (contentH - elemH) + "px";
                 }
-                else if (position > 270) {
+                else if (position > 210 + offset) {
                     $elem.style.position = 'fixed';
-                    $elem.style.top = '80px';
+                    $elem.style.top = offset + "px";
                 }
                 else {
                     $elem.style.position = 'static';
