@@ -93,12 +93,15 @@ app.controller('sidebarOpenCtrl', ['$scope', '$timeout', '$resource', ($scope, $
       const item = open[i];
       if(item.date === today) {
         $scope.info = item;
-        break;
+        return;
       }
     }
     if(info === null) {
       $scope.info = open[0];
     }
+    const close = $scope.info.close.split(':');
+    const closeMoment = moment().set({'hour': close[0], 'minute': close[1]});
+    $scope.lo = closeMoment.subtract($scope.info.lo, 'minutes').format('HH:mm');
   });
 }]);
 

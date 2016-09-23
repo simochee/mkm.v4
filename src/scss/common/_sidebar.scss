@@ -11,4 +11,32 @@
 			margin-top: 15px;
 		}
 	}
+	.large {
+		font-size: 25px;
+	}
+	.midium {
+		font-size: 14px;
+	}
+	.open {
+		text-align: center;
+		.large {
+			font-family: Dejima;
+		}
+		.time,
+		.lo {
+			display: block;
+		}
+		.time {
+			margin-top: 10px;
+			line-height: 40px;
+		}
+		.lo {
+			margin-bottom: 20px;
+			line-height: 30px;
+			color: #ccc;
+		}
+		.close {
+			line-height: 80px;
+		}
+	}
 }

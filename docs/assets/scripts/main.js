@@ -139,12 +139,15 @@ app.controller('sidebarOpenCtrl', ['$scope', '$timeout', '$resource', function (
                 var item = open[i];
                 if (item.date === today) {
                     $scope.info = item;
-                    break;
+                    return;
                 }
             }
             if (info === null) {
                 $scope.info = open[0];
             }
+            var close = $scope.info.close.split(':');
+            var closeMoment = moment().set({ 'hour': close[0], 'minute': close[1] });
+            $scope.lo = closeMoment.subtract($scope.info.lo, 'minutes').format('HH:mm');
         });
     }]);
 app.controller('menuCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {

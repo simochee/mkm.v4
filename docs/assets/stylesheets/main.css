@@ -187,6 +187,42 @@ body {
 .sidebar h4:first-child {
   margin-top: 15px;
 }
+/* line 14, ../../../src/scss/common/_sidebar.scss */
+.sidebar .large {
+  font-size: 25px;
+}
+/* line 17, ../../../src/scss/common/_sidebar.scss */
+.sidebar .midium {
+  font-size: 14px;
+}
+/* line 20, ../../../src/scss/common/_sidebar.scss */
+.sidebar .open {
+  text-align: center;
+}
+/* line 22, ../../../src/scss/common/_sidebar.scss */
+.sidebar .open .large {
+  font-family: Dejima;
+}
+/* line 25, ../../../src/scss/common/_sidebar.scss */
+.sidebar .open .time,
+.sidebar .open .lo {
+  display: block;
+}
+/* line 29, ../../../src/scss/common/_sidebar.scss */
+.sidebar .open .time {
+  margin-top: 10px;
+  line-height: 40px;
+}
+/* line 33, ../../../src/scss/common/_sidebar.scss */
+.sidebar .open .lo {
+  margin-bottom: 20px;
+  line-height: 30px;
+  color: #ccc;
+}
+/* line 38, ../../../src/scss/common/_sidebar.scss */
+.sidebar .open .close {
+  line-height: 80px;
+}
 
 /* line 1, ../../../src/scss/common/_index.scss */
 .index-header {
