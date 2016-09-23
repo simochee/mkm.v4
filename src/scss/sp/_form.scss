@@ -1,0 +1,60 @@
+.form-large {
+	margin-top: 20px;
+	.form-col {
+		margin: 15px 2%;
+		label {
+			font-size: 18px;
+			font-family: Dejima;
+			line-height: 20px;
+		}
+		input,
+		textarea {
+			display: block;
+			width: 100%;
+			margin: 10px 0;
+			border: none;
+			background: #222;
+			box-sizing: border-box;
+			font-size: 16px;
+			line-height: 30px;
+			color: #eee;
+			@include input-placeholder {
+				color: #666;
+			}
+			&.error {
+				position: relative;
+				border: 1px solid  $orange;
+			}
+		}
+		input {
+			height: 40px;
+			padding: 0 15px;
+			line-height: 40px;
+		}
+		textarea {
+			padding: 10px 15px;
+		}
+		&.textarea {
+			height: 150px;
+			margin-bottom: 25px;
+			textarea {
+				height: 130px;
+				resize: none;
+			}
+		}
+		.help-area {
+			clear: both;
+			height: 15px;
+			margin-bottom: 10px;
+			font-size: 12px;
+			line-height: 15px;
+			& > span {
+				display: none;
+			}
+			.error {
+				display: inline;
+				color: $orange;
+			}
+		}
+	}
+}
