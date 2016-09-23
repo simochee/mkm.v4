@@ -30,6 +30,14 @@ app.controller('appCtrl', ['$scope', 'info', ($scope, info) => {
     }
   ];
 
+  // クリックしたらスムーススクロール
+  $scope.scrollTo = (id) => {
+    const $elem = document.getElementById(id);
+    const target = $elem.getBoundingClientRect().top + window.pageYOffset - 90;
+    window.scrollTo(window.pageXOffset, target);
+    return;
+  }
+
 }]);
 
 app.controller('navbarCtrl', ['$scope', ($scope) => {
@@ -76,6 +84,26 @@ app.controller('menuCtrl', ['$scope', 'getJSON', function($scope, getJSON) {
   $scope.pageName = { ja: 'お品書き', en: 'Menu' };
   $scope.menuList = getJSON.get('./public/menu-list.json');
   console.log($scope.menuList);
+
+  // トラッキング
+  (() => {
+    const $elem = document.getElementById('sidebar');
+    window.addEventListener('scroll', (e) => {
+      const position = e.target.scrollingElement.scrollTop;
+      const elemH = $elem.scrollHeight;
+      const contentH = document.body.scrollHeight - document.querySelector('.global-footer').clientHeight - 20;
+      console.log(position + elemH, contentH)
+      if(position + 80 > contentH - elemH) {
+        $elem.style.position = 'absolute';
+        $elem.style.top = `${contentH - elemH}px`;
+      } else if(position > 270) {
+        $elem.style.position = 'fixed';
+        $elem.style.top = '80px';
+      } else {
+        $elem.style.position = 'static';
+      }
+    })
+  })();
 }]);
 
 app.controller('newsCtrl', ['$scope', 'getJSON', ($scope, getJSON) => {

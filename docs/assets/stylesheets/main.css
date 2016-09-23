@@ -266,54 +266,55 @@ body {
   padding-left: 8px;
   font-size: 14px;
   color: #888;
+  text-transform: capitalize;
 }
-/* line 40, ../../../src/scss/common/_menu-list.scss */
+/* line 41, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items {
   width: 640px;
   margin: 0 auto;
 }
-/* line 43, ../../../src/scss/common/_menu-list.scss */
+/* line 44, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li {
   overflow: hidden;
   margin: 15px 0;
 }
-/* line 46, ../../../src/scss/common/_menu-list.scss */
+/* line 47, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-left {
   float: left;
   width: 420px;
   padding: 8px 0;
 }
-/* line 50, ../../../src/scss/common/_menu-list.scss */
+/* line 51, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-left.wide {
   width: 100%;
 }
-/* line 53, ../../../src/scss/common/_menu-list.scss */
+/* line 54, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-left h5 {
   float: left;
   font-size: 20px;
   font-family: Dejima;
   color: #e67928;
 }
-/* line 59, ../../../src/scss/common/_menu-list.scss */
+/* line 60, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-left .price {
   float: right;
   font-size: 14px;
   font-weight: bold;
   color: #aaa;
 }
-/* line 65, ../../../src/scss/common/_menu-list.scss */
+/* line 66, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-left p {
   clear: both;
   padding: 8px 14px;
   font-size: 13px;
   line-height: 20px;
 }
-/* line 72, ../../../src/scss/common/_menu-list.scss */
+/* line 73, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-right {
   float: right;
   width: 200px;
 }
-/* line 75, ../../../src/scss/common/_menu-list.scss */
+/* line 76, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-right .thumb {
   width: 200px;
   height: 120px;

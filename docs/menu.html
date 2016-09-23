@@ -34,7 +34,7 @@
 						<span class="en">{{cat.en}}</span>
 					</h3>
 
-					<div ng-repeat="class in cat.list">
+					<div ng-repeat="class in cat.list" id="{{class.en}}">
 						<h4>
 							<span class="ja">{{class.ja}}</span>
 							<span class="en">{{class.en}}</span>
@@ -61,13 +61,13 @@
 
 			<div class="sidebar right">
 
-				<div class="menu-tree tracking-class" data-offset="95" data-start="180" data-end="">
+				<div class="menu-tree" id="sidebar">
 
 					<div ng-repeat="cat in menuList">
 						<h4><span>{{cat.ja}}</span></h4>
 						<ul>
 							<li ng-repeat="item in cat.list">
-								<a href="#">{{item.ja}}</a>
+								<a href="#" ng-click="scrollTo(item.en)">{{item.ja}}</a>
 							</li>
 						</ul>
 					</div>

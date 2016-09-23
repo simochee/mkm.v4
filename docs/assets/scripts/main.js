@@ -81,6 +81,13 @@ app.controller('appCtrl', ['$scope', 'info', function ($scope, info) {
                 href: 'reserve.html', ja: 'ご予約', en: 'Reservation'
             }
         ];
+        // クリックしたらスムーススクロール
+        $scope.scrollTo = function (id) {
+            var $elem = document.getElementById(id);
+            var target = $elem.getBoundingClientRect().top + window.pageYOffset - 90;
+            window.scrollTo(window.pageXOffset, target);
+            return;
+        };
     }]);
 app.controller('navbarCtrl', ['$scope', function ($scope) {
     }]);
@@ -117,6 +124,27 @@ app.controller('menuCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
         $scope.pageName = { ja: 'お品書き', en: 'Menu' };
         $scope.menuList = getJSON.get('./public/menu-list.json');
         console.log($scope.menuList);
+        // トラッキング
+        (function () {
+            var $elem = document.getElementById('sidebar');
+            window.addEventListener('scroll', function (e) {
+                var position = e.target.scrollingElement.scrollTop;
+                var elemH = $elem.scrollHeight;
+                var contentH = document.body.scrollHeight - document.querySelector('.global-footer').clientHeight - 20;
+                console.log(position + elemH, contentH);
+                if (position + 80 > contentH - elemH) {
+                    $elem.style.position = 'absolute';
+                    $elem.style.top = (contentH - elemH) + "px";
+                }
+                else if (position > 270) {
+                    $elem.style.position = 'fixed';
+                    $elem.style.top = '80px';
+                }
+                else {
+                    $elem.style.position = 'static';
+                }
+            });
+        })();
     }]);
 app.controller('newsCtrl', ['$scope', 'getJSON', function ($scope, getJSON) {
         $scope.headerBg = './assets/img/header/news.jpg';
