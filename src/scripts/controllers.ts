@@ -23,8 +23,7 @@ app.controller('appCtrl', ['$scope', 'info', ($scope, info) => {
       href: '#', ja: 'お得な情報', en: 'Discount'
     },
     {
-      // href: 'info.html', ja: '店舗情報', en: 'Information'
-      href: '#', ja: '店舗情報', en: 'Information'
+      href: 'info.html', ja: '店舗情報', en: 'Information'
     },
     {
       href: 'reserve.html', ja: 'ご予約', en: 'Reservation'
@@ -66,7 +65,7 @@ app.controller('indexCtrl', ['$scope', '$timeout', 'info', 'getJSON', ($scope, $
         break;
       }
     }
-  });
+  }, 500);
 }]);
 
 app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) => {
@@ -160,4 +159,11 @@ app.controller('newsCtrl', ['$scope', 'getJSON', ($scope, getJSON) => {
 app.controller('reserveCtrl', ['$scope', ($scope) => {
   $scope.headerBg = './assets/img/header/reserve.jpg';
   $scope.pageName = { ja: 'ご予約', en: 'Reservation' };
+}]);
+
+app.controller('infoCtrl', ['$scope', 'getJSON', ($scope, getJSON) => {
+  $scope.headerBg = './assets/img/header/info.jpg';
+  $scope.pageName = { ja: '店舗情報', en: 'Information' };
+
+  $scope.info = getJSON.get('./public/info.json');
 }]);

@@ -1623,6 +1623,12 @@ body {
   color: #bbb;
 }
 
+/* line 2, ../../../src/scss/common/_info.scss */
+.information .map-canvas {
+  width: 100%;
+  height: 300px;
+}
+
 /* line 1, ../../../src/scss/common/_form.scss */
 .btn {
   display: table;

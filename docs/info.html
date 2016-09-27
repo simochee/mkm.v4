@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="myapp" resize ng-controller="appCtrl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>店舗情報 | 村村村</title>
+	<link rel="stylesheet" href="./assets/stylesheets/ionicons.css">
+	<link rel="stylesheet" href="./assets/stylesheets/main.css">
+</head>
+
+<body ng-controller="infoCtrl" ng-class="'useragent-' + ua">
+
+	<ng-include src="viewsNavbar"></ng-include>
+
+	<main class="main-area">
+
+		<div class="container">
+
+			<div class="content-header" ng-style="{'background-image': 'url(' + headerBg + ')'}">
+	<div class="header-outline">
+		<h2>
+			<span class="ja" ng-cloak>{{pageName.ja}}</span>
+			<span class="en" ng-cloak>{{pageName.en}}</span>
+		</h2>
+	</div>
+</div>
+
+
+			<div class="main-content wide information">
+				<iframe class="map-canvas" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAG7OxS3Csn54tNNU3zJK2v4u6M1ZwNfyg&q=%e5%b1%b1%e5%8f%a3%e7%9c%8c%e5%ae%87%e9%83%a8%e5%b8%82%e5%ba%8a%e6%b3%a2%ef%bc%91%e4%b8%81%e7%9b%ae%ef%bc%95%e2%88%92%ef%bc%91%ef%bc%90&zoom=17" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<div class="main-content left">
+
+				<table class="table">
+					<tr>
+						<th>住所</th>
+						<td>
+							〒{{info[0].post}}<br>
+							{{info[0].address}}
+						</td>
+					</tr>
+					<tr>
+						<th>アクセス</th>
+						<td>
+							{{info[0].access}}
+						</td>
+					</tr>
+				</table>
+
+			</div>
+
+			<div class="sidebar right">
+
+    		    <ng-include src="'common/sidebar.html'"></ng-include>
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<ng-include src="viewsFooter"></ng-include>
+
+	<!-- <script src="js/angular.min.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/main.js"></script> -->
+<script src="assets/scripts/libs.js"></script>
+<script src="assets/scripts/main.js"></script>
+
+</body>
+</head>

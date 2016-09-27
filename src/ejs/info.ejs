@@ -1,0 +1,56 @@
+<%- include('./views/_head', {
+	pageName: '店舗情報',
+	controller: 'info'
+}) %>
+
+	<ng-include src="viewsNavbar"></ng-include>
+
+	<main class="main-area">
+
+		<div class="container">
+
+			<%- include('./views/_header', {
+				bg: 'headerBg',
+				pageName: 'pageName'
+			}) %>
+
+			<div class="main-content wide information">
+				<iframe class="map-canvas" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAG7OxS3Csn54tNNU3zJK2v4u6M1ZwNfyg&q=%e5%b1%b1%e5%8f%a3%e7%9c%8c%e5%ae%87%e9%83%a8%e5%b8%82%e5%ba%8a%e6%b3%a2%ef%bc%91%e4%b8%81%e7%9b%ae%ef%bc%95%e2%88%92%ef%bc%91%ef%bc%90&zoom=17" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<div class="main-content left">
+
+				<table class="table">
+					<tr>
+						<th>住所</th>
+						<td>
+							〒{{info[0].post}}<br>
+							{{info[0].address}}
+						</td>
+					</tr>
+					<tr>
+						<th>アクセス</th>
+						<td>
+							{{info[0].access}}
+						</td>
+					</tr>
+				</table>
+
+			</div>
+
+			<div class="sidebar right">
+
+    		    <ng-include src="'common/sidebar.html'"></ng-include>
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<ng-include src="viewsFooter"></ng-include>
+
+	<% include views/_scripts %>
+
+</body>
+</head>
