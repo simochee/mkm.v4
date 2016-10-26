@@ -71,9 +71,8 @@ app.controller('indexCtrl', ['$scope', '$timeout', 'info', 'getJSON', ($scope, $
 app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) => {
   const imgPath: String = './assets/img/index-pic';
   $scope.slides = [
-    { img: `${imgPath}/idx-pic1.jpg`, active: true },
-    { img: `${imgPath}/idx-pic2.jpg`, active: false },
-    { img: `${imgPath}/idx-pic3.jpg`, active: false }
+    { img: `${imgPath}/idx-pic5.jpg`, active: true },
+    { img: `${imgPath}/idx-pic6.jpg`, active: true },
   ];
 
   let activeIdx = 0;

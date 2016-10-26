@@ -47,8 +47,8 @@
 									<div class="price">{{item.price | number}}{{item.price === '時価' ? '時価' : '円'}}</div>
 									<p ng-bind-html="item.comment"></p>
 								</div>
-								<div class="menu-right" ng-if="item.img != null">
-									<div class="thumb" ng-style="{'background-image': 'url(' + item.img + ')'}"></div>
+								<div class="menu-right" ng-if="item.image != ''">
+									<div class="thumb" ng-style="{'background-image': 'url(/assets/img/menu-img/' + item.image + '.jpg)'}"></div>
 								</div>
 							</li>
 						</ul>
