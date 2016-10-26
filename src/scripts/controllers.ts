@@ -73,6 +73,7 @@ app.controller('indexHeaderCtrl', ['$scope', '$interval', ($scope, $interval) =>
   $scope.slides = [
     { img: `${imgPath}/idx-pic5.jpg`, active: true },
     { img: `${imgPath}/idx-pic6.jpg`, active: true },
+    { img: `${imgPath}/idx-pic7.jpg`, active: true },
   ];
 
   let activeIdx = 0;
