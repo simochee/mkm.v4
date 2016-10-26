@@ -1039,7 +1039,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 92%;
   margin: 0 auto;
 }
-/* line 12, ../../../src/scss/sp/_menu-list.scss */
+/* line 10, ../../../src/scss/sp/_menu-list.scss */
+.useragent-sp .menu-list .menu-items .menu-left {
+  width: 100%;
+}
+/* line 15, ../../../src/scss/sp/_menu-list.scss */
 .useragent-sp .menu-tree {
   display: none;
 }
