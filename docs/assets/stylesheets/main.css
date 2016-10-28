@@ -83,7 +83,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .useragent-pc .global-navbar .navbar-wrapper {
   height: 66px;
   padding-bottom: 2px;
-  border-bottom: 3px solid #e67928;
+  border-bottom: 3px solid #f6ac1d;
 }
 /* line 14, ../../../src/scss/pc/_navbar.scss */
 .useragent-pc .global-navbar .navbar-wrapper .container {
@@ -100,7 +100,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 120px;
   height: 0;
   padding-top: 65px;
-  background: url(../img/logo.svg) center center no-repeat;
+  background: url(../img/logo-name.png) center center no-repeat;
   background-size: contain;
 }
 /* line 28, ../../../src/scss/pc/_navbar.scss */
@@ -242,8 +242,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 0;
   margin: -120px;
   padding-top: 240px;
-  background: url(../img/logo.svg) center center no-repeat #000;
-  background-size: 80%;
+  background: url(../img/logo.png) center center no-repeat #000;
+  background-size: 70%;
 }
 /* line 24, ../../../src/scss/pc/_index.scss */
 .useragent-pc .index-header .header-nav .nav-list {
@@ -366,7 +366,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 116, ../../../src/scss/pc/_index.scss */
 .useragent-pc .index-header .go-content:hover .text,
 .useragent-pc .index-header .go-content:hover .icon {
-  color: #e67928;
+  color: #f6ac1d;
 }
 /* line 124, ../../../src/scss/pc/_index.scss */
 .useragent-pc .monthly-recommend {
@@ -388,7 +388,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   float: left;
   margin-bottom: 10px;
   font-size: 20px;
-  color: #e67928;
+  color: #f6ac1d;
   font-family: Dejima;
 }
 /* line 143, ../../../src/scss/pc/_index.scss */
@@ -462,11 +462,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 47, ../../../src/scss/pc/_menu-tree.scss */
 .useragent-pc .menu-tree ul li a:hover {
-  color: #e67928;
+  color: #f6ac1d;
 }
 /* line 49, ../../../src/scss/pc/_menu-tree.scss */
 .useragent-pc .menu-tree ul li a:hover::before {
-  background: #e67928;
+  background: #f6ac1d;
 }
 /* line 1, ../../../src/scss/pc/_news.scss */
 .useragent-pc .news-article {
@@ -581,7 +581,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .useragent-pc .form-large .form-col input.error,
 .useragent-pc .form-large .form-col textarea.error {
   position: relative;
-  border: 1px solid #e67928;
+  border: 1px solid #f6ac1d;
 }
 /* line 34, ../../../src/scss/pc/_form.scss */
 .useragent-pc .form-large .form-col input {
@@ -635,7 +635,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 72, ../../../src/scss/pc/_form.scss */
 .useragent-pc .form-large .form-col .help-area .error {
   display: inline;
-  color: #e67928;
+  color: #f6ac1d;
 }
 
 /* line 1, ../../../src/scss/sp/_navbar.scss */
@@ -651,7 +651,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 9, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .global-navbar .navbar-wrapper {
   height: 48px;
-  border-bottom: 2px solid #e67928;
+  border-bottom: 2px solid #f6ac1d;
 }
 /* line 12, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .global-navbar .navbar-wrapper .navbar-brand {
@@ -665,8 +665,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 0;
   margin: 4px 0;
   padding-top: 40px;
-  background: url(../img/logo.svg) center center no-repeat;
-  background-size: contain;
+  background: url(../img/logo-name.png) center center no-repeat;
+  background-size: 90%;
 }
 /* line 25, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .global-navbar .navbar-wrapper .navbar-toggle {
@@ -714,7 +714,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 62, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor:hover {
-  color: #e67928;
+  color: #f6ac1d;
 }
 /* line 65, ../../../src/scss/sp/_navbar.scss */
 .useragent-sp .navbar-collapse .navbar-nav .nav-item .nav-anchor .ja {
@@ -821,7 +821,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 0;
   margin: 0 auto;
   padding-top: 180px;
-  background: url(../img/logo.svg) center center no-repeat #000;
+  background: url(../img/logo.png) center center no-repeat #000;
   background-size: 80%;
 }
 /* line 22, ../../../src/scss/sp/_index.scss */
@@ -892,7 +892,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .useragent-sp .monthly-recommend .details .name {
   float: left;
   margin-bottom: 10px;
-  color: #e67928;
+  color: #f6ac1d;
   font-size: 18px;
   font-family: Dejima;
   line-height: 20px;
@@ -1028,7 +1028,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 87, ../../../src/scss/sp/_news.scss */
 .useragent-sp .news-article .footer .category a:hover {
   text-decoration: none;
-  color: #e67928;
+  color: #f6ac1d;
 }
 /* line 3, ../../../src/scss/sp/_menu-list.scss */
 .useragent-sp .menu-list h4 .en {
@@ -1098,7 +1098,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .useragent-sp .form-large .form-col input.error,
 .useragent-sp .form-large .form-col textarea.error {
   position: relative;
-  border: 1px solid #e67928;
+  border: 1px solid #f6ac1d;
 }
 /* line 29, ../../../src/scss/sp/_form.scss */
 .useragent-sp .form-large .form-col input {
@@ -1135,7 +1135,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 54, ../../../src/scss/sp/_form.scss */
 .useragent-sp .form-large .form-col .help-area .error {
   display: inline;
-  color: #e67928;
+  color: #f6ac1d;
 }
 
 /* line 1, ../../../src/scss/common/_general.scss */
@@ -1414,7 +1414,7 @@ body {
   float: left;
   font-size: 20px;
   font-family: Dejima;
-  color: #e67928;
+  color: #f6ac1d;
 }
 /* line 60, ../../../src/scss/common/_menu-list.scss */
 .menu-list .menu-items li .menu-left .price {
@@ -1562,11 +1562,11 @@ body {
 /* line 90, ../../../src/scss/common/_news.scss */
 .news-article .body a:hover {
   text-decoration: none;
-  color: #e67928;
+  color: #f6ac1d;
 }
 /* line 95, ../../../src/scss/common/_news.scss */
 .news-article .body em {
-  color: #e67928;
+  color: #f6ac1d;
 }
 /* line 98, ../../../src/scss/common/_news.scss */
 .news-article .body strong {
@@ -1610,7 +1610,7 @@ body {
 /* line 130, ../../../src/scss/common/_news.scss */
 .news-article .footer .category a:hover {
   text-decoration: none;
-  color: #e67928;
+  color: #f6ac1d;
 }
 
 /* line 140, ../../../src/scss/common/_news.scss */
